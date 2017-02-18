@@ -14,6 +14,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var wsServer;
 var connection;
+var connections = [];
 var app = express();
 
 
@@ -88,13 +89,15 @@ button.watch(function (err, value) {
 });
 
 function sendValues() {
-    connection.sendUTF(JSON.stringify({
-        led: {
-            red: {value: led.red.readSync()},
-            yellow: {value: led.yellow.readSync()},
-            green: {value: led.green.readSync()}
-        }
-    }));
+    for(var i = 0; i < connections.length; i++) {
+        connections[i].sendUTF(JSON.stringify({
+            led: {
+                red: {value: led.red.readSync()},
+                yellow: {value: led.yellow.readSync()},
+                green: {value: led.green.readSync()}
+            }
+        }));
+    }
 }
 
 function toggleLeds() {
@@ -126,6 +129,9 @@ wsServer = new WebSocketServer({
 
 wsServer.on('request', function(request) { 
     connection = request.accept('echo-protocol', request.origin);
+
+    connections.push(connection);
+
     console.log((new Date()) + ' Connection accepted.');
 
     connection.on('message', function(message) {
