@@ -34,7 +34,12 @@ if (/localhost/.test(document.url)) {
 
 new Vue({
     el: "#ledRedCircle",
-    template: '#ledRed-circle-template'
+    template: '#ledRed-circle-template',
+    computed: {
+        isRedLedTurnOn: function() {
+            return switchRed.model === 1;
+        }
+    }
 });
 
 var switchYellow = new Vue({
@@ -103,9 +108,6 @@ var mainBox = new Vue({
     computed: {
         showBox: function() {
             return !!this.user.name;
-        },
-        isRedLedTurnOn: function() {
-            return switchRed.model === 1;
         }
     }
 });
