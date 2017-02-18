@@ -1,0 +1,27 @@
+{
+  "name": "smart-home",
+  "version": "1.0.0",
+  "description": "aplikacja webowa do obsługi inteligentnego domu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radoslawpoplawski/smartHome.git"
+  },
+  "author": "rpoplawski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radoslawpoplawski/smartHome/issues"
+  },
+  "homepage": "https://github.com/radoslawpoplawski/smartHome#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "connect": "^3.6.0",
+    "express": "^4.14.1",
+    "onoff": "^1.1.2",
+    "vue": "^2.1.10",
+    "websocket": "^1.0.24"
+  }
+}
