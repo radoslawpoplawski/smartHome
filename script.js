@@ -1,4 +1,4 @@
-var url = document.url,
+var url = document.URL,
     leds = {
         red: {
             name: 'switch_red',
@@ -28,7 +28,7 @@ var switchRed = new Vue({
     }
 });
 
-if (/localhost/.test(document.url)) {
+if (/localhost/.test(document.URL)) {
     url = 'http://192.168.1.109:3000/'
 }
 
@@ -166,6 +166,7 @@ if ("WebSocket" in window) {
 }
 
 function led(colour, value) {
+    console.log(url);
   $.ajax({
     url: url + 'led/' + colour + '/' + value
   });
