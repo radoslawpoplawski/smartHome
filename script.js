@@ -1,4 +1,5 @@
-var leds = {
+var url = document.url,
+    leds = {
         red: {
             name: 'switch_red',
             colour: 'red'
@@ -26,6 +27,10 @@ var switchRed = new Vue({
         }
     }
 });
+
+if (/localhost/.test(document.url)) {
+    url = 'http://192.168.1.109:3000/'
+}
 
 new Vue({
     el: "#ledRedCircle",
@@ -115,7 +120,7 @@ new Vue({
     methods: {
         loginUser: function() {
             $.ajax({
-                url: document.URL + 'login-do',
+                url: url + 'login-do',
                 method: 'POST',
                 dataType: 'json',
                 data: {
@@ -160,12 +165,12 @@ if ("WebSocket" in window) {
 
 function led(colour, value) {
   $.ajax({
-    url: document.URL + 'led/' + colour + '/' + value
+    url: url + 'led/' + colour + '/' + value
   });
 }
 
 function pushButton() {
   $.ajax({
-    url: document.URL + 'button'
+    url: url + 'button'
   })
 }
