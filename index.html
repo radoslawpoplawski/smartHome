@@ -1,87 +1,25 @@
-<!DOCTYPE html>
-<html lang="pl">
+<html>
  <head>
-   <meta charset="utf-8" />
+   <meta charset="utf-8"/>
    <title>My Express API server example</title>
-   <link rel="stylesheet" type="text/css" href="style.css">
-   <script src="http://code.jquery.com/jquery-latest.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <script src="node_modules/jquery/dist/jquery.js"></script>
    <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
  </head>
  <body>
-   <div id="loginBox"></div>
-   <div id="mainBox" v-if="showBox">
+   <div id="app">
+       <ol>
+           <login-form v-for="item in groceryList" v-bind:todo="item"></login-form>
+       </ol>
    </div>
-   <div class="box">
-       <div>
-           <label>Wartość diody czerwonej</label>
-       </div>
-       <div>
-           <div id="switchRed"></div>
-       </div>
-       <div>
-           <div id="ledRedCircle"></div>
-       </div>
-   </div>
-   <div class="box">
-       <div>
-           <label>Wartość diody żółtej</label>
-       </div>
-       <div>
-           <div id="switchYellow"></div>
-       </div>
-       <div>
-           <div id="ledYellowCircle"></div>
-       </div>
-   </div>
-   <div class="box">
-       <div>
-           <label>Wartość diody zielonej</label>
-       </div>
-       <div>
-           <div id="switchGreen"></div>
-       </div>
-       <div>
-           <div id="ledGreenCircle"></div>
-       </div>
-   </div>
-   <div id="button"></div>
 
+   <script type="text/x-template" id="aaaa">
+   <section>bbbb</section>
+</script>
 
-   <script type="text/x-template" id="login-box-template">
-       <div v-if="showLoginBox">
-           <form v-on:submit.prevent @submit="loginUser">
-               <label>login</label>
-               <input type="text" name="login" v-model="loginValue">
-               <label>hasło</label>
-               <input type="password" name="password" v-model="passwordValue">
-               <button type="submit">Zaloguj się</button>
-           </form>
-       </div>
-   </script>
+   <div w3-include-html="components/login-form.vue"></div>
+   <div w3-include-html="components/app-form.vue"></div>
 
-   <script type="text/x-template" id="switch-template">
-       <div>
-           <input type="radio" :name="name" v-model="model" value="0" @change="update">
-           <input type="radio" :name="name" v-model="model" value="1" @change="update">
-       </div>
-   </script>
-
-   <script type="text/x-template" id="button-template">
-       <div>
-           <button @click="click">Włącz / wyłącz wszystkie diody led</button>
-       </div>
-   </script>
-
-   <script type="text/x-template" id="ledRed-circle-template">
-       <div class="led" v-bind:class="{'red': isRedLedTurnOn}"></div>
-   </script>
-   <script type="text/x-template" id="ledYellow-circle-template">
-       <div class="led" v-bind:class="{'yellow': isYellowLedTurnOn}"></div>
-   </script>
-   <script type="text/x-template" id="ledGreen-circle-template">
-       <div class="led" v-bind:class="{'green': isGreenLedTurnOn}"></div>
-   </script>
-
-   <script type="text/javascript" src="script.js"></script>
+   <script type="text/javascript" src="js/script.js"></script>
  </body>
 </html>
