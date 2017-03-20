@@ -3,7 +3,7 @@ var url = document.URL;
 includeHtml();
 
 function includeHtml() {
-    var list = $('[w3-include-html]'),
+    var list = $('[include-html]'),
         elmnt,
         xhttp;
 
@@ -13,11 +13,11 @@ function includeHtml() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 elmnt.innerHTML = this.responseText;
-                elmnt.removeAttribute("w3-include-html");
+                elmnt.removeAttribute("include-html");
                 includeHtml();
             }
         };
-        xhttp.open("GET", elmnt.getAttribute("w3-include-html"), true);
+        xhttp.open("GET", elmnt.getAttribute("include-html"), true);
         xhttp.send();
     } else {
         generateView();
