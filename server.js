@@ -56,11 +56,6 @@ app.get('/led/:colour/:value', function(req, res) {
      res.status(200).send('Led ' + req.params.colour + ' doesn\'t initialized');
   }
   
-}); 
-
-app.get('/button', function(req, res) {
-  toggleLeds();
-  res.status(200).send('All leds value set to ' + led.red.readSync());
 });
 
 // Express route for any other unrecognised incoming requests

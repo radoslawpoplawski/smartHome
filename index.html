@@ -4,17 +4,17 @@
         <title>My Express API server example</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="node_modules/vue/dist/vue.js"></script>
     </head>
     <body>
         <div id="app">
-            <ol>
-                <login-form v-for="item in groceryList" v-bind:todo="item"></login-form>
-            </ol>
+            <login-section v-if="!isUserLogged()"></login-section>
+            <main-section v-if="isUserLogged()"></main-section>
         </div>
 
-        <div include-html="components/login-form.vue"></div>
-        <div include-html="components/app-form.vue"></div>
+        <div id="login-section" include-html="components/login-section.vue"></div>
+        <div id="main-section" include-html="components/main-section.vue"></div>
 
         <script type="text/javascript" src="js/script.js"></script>
     </body>
