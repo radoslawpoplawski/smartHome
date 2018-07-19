@@ -1,2 +1,10 @@
+.DS_Store
 .idea/
 node_modules/
+dist/
+npm-debug.log
+package-lock.json
+test/unit/coverage
+test/e2e/reports
+selenium-server.log
+selenium-debug.log

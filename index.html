@@ -1,21 +1,13 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>My Express API server example</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="node_modules/jquery/dist/jquery.js"></script>
-        <script src="js/underscore-min.js"></script>
-        <script src="node_modules/vue/dist/vue.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <login-section v-if="!isUserLogged()"></login-section>
-            <main-section v-if="isUserLogged()"></main-section>
-        </div>
-
-        <div id="login-section" include-html="components/login-section.vue"></div>
-        <div id="main-section" include-html="components/main-section.vue"></div>
-
-        <script type="text/javascript" src="js/script.js"></script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/img/favicon.png" rel="shortcut icon">
+    <title>SmartHome</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
