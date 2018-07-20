@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import MainComponent from '../components/main.component'
 import LoginComponent from '../components/login.component'
 import {ROUTING} from '../assets/js/routing.const'
+import {LoggedGuard, NotLoggedGuard} from '../assets/js/guards'
 
 Vue.use(Router)
 
@@ -12,11 +13,13 @@ export default new Router({
     {
       path: ROUTING.main,
       name: 'Main',
-      component: MainComponent
+      component: MainComponent,
+      beforeEnter: LoggedGuard
     },{
       path: ROUTING.login,
       name: 'Login',
-      component: LoginComponent
+      component: LoginComponent,
+      beforeEnter: NotLoggedGuard
     }
   ]
 })
