@@ -31,11 +31,14 @@
     },
     methods: {
       submitLoginForm () {
+        console.log('submit', this.data.login, this.data.password);
         apiService.loginDo(this.data).then(
           response => {
+            console.info('ok');
             alert(JSON.stringify(response))
           },
           error => {
+            console.error('error');
             alert(JSON.stringify(error))
           })
           .finally(
