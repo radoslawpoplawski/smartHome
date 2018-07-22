@@ -3,8 +3,7 @@ import {ENDPOINTS} from '../assets/js/endpoints.const'
 
 class ApiService {
   getDataFromApi (url, data, options = {}) {
-    console.log('asd', process.env.API);
-    return Vue.http.post(process.env.API + url, data, options)
+    return Vue.http.post('http://' + window.location.hostname + ':8080' + url, data, options)
   }
 
   loginDo (data) {
