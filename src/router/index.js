@@ -14,12 +14,12 @@ export default new Router({
       path: ROUTING.main,
       name: 'Main',
       component: MainComponent,
-      beforeEnter: LoggedGuard
+      // beforeEnter: LoggedGuard
     },{
       path: ROUTING.login,
       name: 'Login',
       component: LoginComponent,
-      beforeEnter: NotLoggedGuard
+      // beforeEnter: NotLoggedGuard
     }
   ]
 })
