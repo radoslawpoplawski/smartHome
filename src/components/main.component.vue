@@ -35,12 +35,12 @@
         })
       },
       moveUp () {
-        apiService.moveUp().then(res => {
+        apiService.blindUp().then(res => {
           // alert(res)
         })
       },
       moveDown () {
-        apiService.moveDown().then(res => {
+        apiService.blindDown().then(res => {
           // alert(res)
         })
       }
